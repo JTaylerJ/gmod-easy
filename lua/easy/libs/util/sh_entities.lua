@@ -21,7 +21,7 @@ if SERVER then
     util.AddNetworkString("easy.libs.util.entities.net_ready")
 
     hook.Add("OnEntityCreated", "easy.libs.util.entities", function(object)
-        hook.Run("easy.OnEntityCreated", object)
+        hook.Run("easy.OnEntityCreated", object, object:GetObject())
         net.Start("easy.libs.util.entities.ent_created")
             net.WriteUInt(object:EntIndex(), 16)
         net.Broadcast()
