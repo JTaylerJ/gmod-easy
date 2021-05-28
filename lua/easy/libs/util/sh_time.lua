@@ -15,6 +15,7 @@ function object_cooldown(object, name, time)
 
 	object.__CoolDowns[name] = SysTime()
 end
+meta_entity.cooldown = object_cooldown
 
 cooldown_data = cooldown_data or {}
 
